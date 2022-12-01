@@ -5,7 +5,7 @@ namespace Alura\Cursos\Controller;
 use Alura\Cursos\Entity\Curso;
 use Alura\Cursos\Infra\EntityManagerCreator;
 
-class Persistencia implements InterfaceControladorRequisicao
+class Persistencia implements InterfaceRequisicao
 {
     /**
      * @var \Doctrine\ORM\EntityManagerInterface
