@@ -5,7 +5,7 @@ namespace Alura\Cursos\Controller;
 use Alura\Cursos\Entity\Curso;
 use Alura\Cursos\Infra\EntityManagerCreator;
 
-class ListarCursos implements InterfaceRequisicao
+class ListarCursos extends RenderHtml implements InterfaceRequisicao
 {
     private $repositorioDeCursos;
 

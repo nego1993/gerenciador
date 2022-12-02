@@ -2,7 +2,7 @@
 
 namespace Alura\Cursos\Controller;
 
-class FormularioInsercao implements InterfaceRequisicao
+class FormularioInsercao extends RenderHtml implements InterfaceRequisicao
 {
     public function processaRequisicao(): void
     {
