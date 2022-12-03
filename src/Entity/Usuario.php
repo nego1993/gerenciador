@@ -1,5 +1,7 @@
 <?php
-namespace Alura\Armazenamento\Entity;
+
+namespace Alura\Cursos\Entity;
+
 /**
  * @Entity
  * @Table(name="usuarios")
@@ -21,8 +23,9 @@ class Usuario
      */
     private $senha;
 
-    public function senhaEstaCorreta(string $senhaPura): bool
+    public function validPassword(string $senhaPura): bool
     {
         return password_verify($senhaPura, $this->senha);
+
     }
 }
