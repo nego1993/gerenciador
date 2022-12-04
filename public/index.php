@@ -12,6 +12,15 @@ if (!array_key_exists($road, $routes)) {
     exit();
 }
 
+session_start();
+
+
+
+if (!isset($_SESSION['logado']) && $road !== '/login' && $road !== '/logar'){
+    header('Location: /login');
+    exit();
+}
+
 $controllerClass = $routes[$road];
 /** @var InterfaceRequisicao $controller */
 $controller = new $controllerClass();

@@ -5,6 +5,7 @@ use Alura\Cursos\Controller\FormularioInsercao;
 use Alura\Cursos\Controller\ListarCursos;
 use Alura\Cursos\Controller\Logar;
 use Alura\Cursos\Controller\Login;
+use Alura\Cursos\Controller\Logout;
 use Alura\Cursos\Controller\Persistencia;
 use Alura\Cursos\Controller\Remove;
 
@@ -16,7 +17,7 @@ return [
     '/editar-curso'  => Editcourse::class,
     '/login'         => Login::class,
     '/logar'         => Logar::class,
-
+    '/logout'        => Logout::class
 ];
 
 return $routes;

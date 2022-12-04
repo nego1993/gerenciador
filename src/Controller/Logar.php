@@ -3,10 +3,12 @@
 namespace Alura\Cursos\Controller;
 
 use Alura\Cursos\Entity\Usuario;
+use Alura\Cursos\Helper\FlashMessage;
 use Alura\Cursos\Infra\EntityManagerCreator;
 
 class Logar implements InterfaceRequisicao
 {
+    use FlashMessage;
 
     /**
      * @var \Doctrine\Common\Persistence\ObjectRepository
@@ -27,33 +29,28 @@ class Logar implements InterfaceRequisicao
         );
 
         if (is_null($email) || $email === false) {
-            echo 'e-mail nao encontrado na nossa base de dados';
-            exit();
+            $this->defineMessage('danger' , 'Usuário inválido');
+            header('Location: /login');
+            return;
         }
-
-        // print '<pre>';
-        // print_r($email);
-        // print '</pre>';
-
         $senha = filter_input(
             INPUT_POST,
             'senha',
             FILTER_SANITIZE_STRING
         );
 
-        // print '<pre>';
-        // print_r($senha);
-        // print '</pre>';
-
         /**
          * @var Usuario $user
          */
         $user = $this->userRepository->findOneBy(["email" => $email]);
         if (is_null($user) || !$user->validPassword($senha)) {
-
-            echo 'E-mail ou senha inválidos';
-            return;
+            $this->defineMessage('danger', 'E-mail e/ou senha inválidos');
+            header('Location: /login');
+            return ;
         }
+
+        $_SESSION['logado'] = true;
+
 
         header("Location: /listar-cursos");
     }

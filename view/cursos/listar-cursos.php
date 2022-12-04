@@ -1,4 +1,4 @@
-    <a href="/novo-curso" class="btn btn-primary mb-2">
+    <a href="/novo-curso" class="btn btn-primary mb-3">
         Novo curso
     </a>
 
