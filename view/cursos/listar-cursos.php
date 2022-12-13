@@ -2,9 +2,9 @@
         Novo curso
     </a>
 
-    <ul class="list-group">
+    <ul class="list-group mb-5">
         <?php foreach ($cursos as $curso): ?>
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-flex justify-content-between" style="border: 2px solid #000">
                 <?= $curso->getDescricao(); ?>
                 <span>
                     <a href="editar-curso?id=<?= $curso->getId() ?>" class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i> Editar</a>

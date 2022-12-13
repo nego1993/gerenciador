@@ -14,8 +14,6 @@ if (!array_key_exists($road, $routes)) {
 
 session_start();
 
-
-
 if (!isset($_SESSION['logado']) && $road !== '/login' && $road !== '/logar'){
     header('Location: /login');
     exit();
